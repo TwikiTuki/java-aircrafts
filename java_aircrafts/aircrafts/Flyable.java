@@ -8,12 +8,15 @@ public abstract class Flyable {
 
     public void registerTower(Tower tower){
         this.tower = tower;
+        this.tower.register(this);
+        System.out.println("IS TOWER NULL IN PARENT " + this.tower == null);
     }
+     
+    public abstract String toString();
 
     public abstract void updateConditions();
 
     public long getId() {
         return this.id;
     }
-
 }
