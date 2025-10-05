@@ -7,6 +7,7 @@ import java_aircrafts.tower.WeatherProvider;
 public abstract class Aircraft extends Flyable{
     protected String name;
     protected Coordinates coordinates;
+    protected long id;  
 
     protected Aircraft(long id, String name, Coordinates coordinates) {
         this.id = id;
@@ -16,6 +17,10 @@ public abstract class Aircraft extends Flyable{
 
     public String getName(){
         return this.name;
+    }
+
+    public long getId() {
+        return this.id;
     }
 
     public abstract AircraftData getTypeData();
@@ -40,28 +45,30 @@ public abstract class Aircraft extends Flyable{
 
         switch (weather) {
             case WeatherProvider.SUN:
-                message = this.getTypeData().sun_message;
+                System.out.println("SUNNY conditions");
                 deltaCoordinates = this.getTypeData().sun_delta;
+                message = this.getTypeData().sun_message;
                 break;
             case WeatherProvider.FOG:
                 System.out.println("FOGGY conditions");
-                message = this.getTypeData().fog_message;
                 deltaCoordinates = this.getTypeData().fog_delta;
+                message = this.getTypeData().fog_message;
                 break;
             case WeatherProvider.RAIN:
                 System.out.println("RAINNY conditions");
-                message = this.getTypeData().rain_message;
                 deltaCoordinates = this.getTypeData().rain_delta;
+                message = this.getTypeData().rain_message;
                 break;
             case WeatherProvider.SNOW:
                 System.out.println("SNOWY conditions");
-                message = this.getTypeData().snow_message;
                 deltaCoordinates = this.getTypeData().snow_delta;
+                message = this.getTypeData().snow_message;
                 break;
         }
-        System.out.println(String.format("%s: %s <%s>.", this.toString(), message, this.coordinates.toShortString()));
         newCoordinates = this.coordinates.sum(deltaCoordinates);
         newCoordinates.sanitize();
+        System.out.print(String.format("%s: %s (%s)->(%s).                    \t", this.toString(), message, this.coordinates.toShortString(), newCoordinates.toShortString()));
+        System.out.println(String.format("   %s -- %s", this.coordinates.toString(), newCoordinates.toString()));
         this.coordinates = newCoordinates;
         if (this.getCoordinates().getHeight() == 0)
             this.tower.unregister(this);

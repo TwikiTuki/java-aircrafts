@@ -2,11 +2,16 @@ java_aircrafts/Main.java
 java_aircrafts/aircrafts/Aircraft.java
 java_aircrafts/aircrafts/Coordinates.java
 java_aircrafts/aircrafts/Flyable.java
-java_aircrafts/aircrafts/Helicopter.java
 java_aircrafts/aircrafts/AircraftFactory.java
 java_aircrafts/aircrafts/Simulator.java
 java_aircrafts/aircrafts/exceptions/InvalidCoordinateValues.java
+java_aircrafts/aircrafts/exceptions/ParsingException.java
+java_aircrafts/aircrafts/exceptions/InvalidAircraftType.java
+java_aircrafts/aircrafts/ParsedData.java
 java_aircrafts/aircrafts/AircraftData.java
+java_aircrafts/aircrafts/Helicopter.java
+java_aircrafts/aircrafts/JetPlane.java
+java_aircrafts/aircrafts/Balloon.java
 java_aircrafts/tower/Tower.java
 java_aircrafts/tower/WeatherTower.java
 java_aircrafts/tower/WeatherProvider.java

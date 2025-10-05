@@ -4,7 +4,7 @@ import java_aircrafts.tower.Tower;
 
 public abstract class Flyable {
     protected Tower tower = null;
-    protected long id;
+    // protected long id;
 
     public void registerTower(Tower tower){
         this.tower = tower;
@@ -16,7 +16,7 @@ public abstract class Flyable {
 
     public abstract void updateConditions();
 
-    public long getId() {
-        return this.id;
-    }
+    // public long getId() {
+        // return this.id;
+    // }
 }

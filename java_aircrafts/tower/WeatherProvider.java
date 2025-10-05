@@ -13,16 +13,27 @@ public class WeatherProvider {
 
     private static final String[] weather = {"SUN", "RAIN", "FOG", "SNOW"};
     private static final WeatherProvider weatherProvider = new WeatherProvider();
-    private WeatherProvider() {}
+
     private Random rand = new Random();
+    private long salt;
+
+    private WeatherProvider() {
+        this.salt = this.rand.nextLong();
+    }
+
+    private WeatherProvider(long salt) {
+        this.salt = salt;
+    }
 
     static WeatherProvider getProvider() {
         return weatherProvider;
     }
 
     public String getCurrentWeather(Coordinates coordinates) {
+        this.rand.setSeed(coordinates.getLongitude() * coordinates.getLatitude() * coordinates.getHeight() * salt);
         int randNum = this.rand.nextInt(10);
         randNum = randNum < 4 ? randNum : 3; 
+        randNum = 3;
         return weather[randNum];
     }
 

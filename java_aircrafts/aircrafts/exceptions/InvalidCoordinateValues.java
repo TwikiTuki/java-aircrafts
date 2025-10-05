@@ -1,6 +1,6 @@
 package  java_aircrafts.aircrafts.exceptions;
 
-public class InvalidCoordinateValues extends Exception {
+public class InvalidCoordinateValues extends ParsingException {
     public InvalidCoordinateValues() {
         super();
     }

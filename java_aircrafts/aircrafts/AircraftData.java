@@ -7,7 +7,7 @@ public enum AircraftData {
         "Today is shower day",
         "Hope no one is in front",
         "So cold",
-        new Coordinates(0, 10, 2),
+        new Coordinates(10, 0, 2),
         new Coordinates(5, 0, 0),
         new Coordinates(1, 0, 0),
         new Coordinates(0, 0, -12)
@@ -18,19 +18,19 @@ public enum AircraftData {
         "Hope no one is in front",
         "So cold",
         new Coordinates(0, 10, 2),
-        new Coordinates(5, 0, 0),
-        new Coordinates(1, 0, 0),
-        new Coordinates(0, 0, -12)
+        new Coordinates(0, 5, 0),
+        new Coordinates(0, 1, 0),
+        new Coordinates(0, 0, -7)
     ),
     BALLOON(
         "Today looks like a good day",
         "Today is shower day",
         "Hope no one is in front",
         "So cold",
-        new Coordinates(0, 10, 2),
-        new Coordinates(5, 0, 0),
-        new Coordinates(1, 0, 0),
-        new Coordinates(0, 0, -12)
+        new Coordinates(2, 0, 4),
+        new Coordinates(0, 0, -5),
+        new Coordinates(0, 0, -3),
+        new Coordinates(0, 0, -15)
     );
 
     final String sun_message;
