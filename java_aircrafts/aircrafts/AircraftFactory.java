@@ -8,7 +8,7 @@ import java_aircrafts.aircrafts.exceptions.InvalidAircraftType;
 public class AircraftFactory {
     public static final String HELICOPTER = "Helicopter";
     public static final String JET_PLANE = "JetPlane";
-    public static final String BALLOON = "Balloon";
+    public static final String BALLOON = "Baloon";
 
     private static final AircraftFactory factory = new AircraftFactory(); 
     private long nextId =  0; 
@@ -20,6 +20,7 @@ public class AircraftFactory {
     }
 
     public Aircraft newAircraft(String type, String name, Coordinates coordinates) throws InvalidAircraftType {
+        // System.out.println("Creating aircraft: " + type);
         switch (type) {
             case HELICOPTER: 
                 return new Helicopter(this.nextId++, name, coordinates);

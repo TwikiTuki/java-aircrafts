@@ -14,16 +14,16 @@ import java_aircrafts.tower.WeatherTower;
 public class Simulator {
     public Simulator() {}
     public void run(ParsedData simulationData) {
-        System.out.println("Hellow java_aircrafts");
-        System.out.println("Getting factory");
+        System.out.println();
         AircraftFactory factory = AircraftFactory.getFactory();
         WeatherTower tower = new WeatherTower();
         System.out.println("Registering aircrafts to tower");
-        for (Flyable f : simulationData.aircrafts)
+        for (Flyable f : simulationData.aircrafts) {
             f.registerTower(tower);
+        }
+        System.out.println();
+        System.out.println("Starting simulation");
         for (int i = 0; i < simulationData.iterations; i++) {
-            System.out.println("------------------------------");
-            System.out.println("Looping weather: ");
             tower.changeWeather();
         }
     }
@@ -40,8 +40,6 @@ public class Simulator {
             // tower.changeWeather();
             // tower.changeWeather();
         for (int i = 0; i < 10; i++){
-            System.out.println("------------------------------");
-            System.out.println("Looping weather: ");
             tower.changeWeather();
         }
     }

@@ -12,7 +12,10 @@ public abstract class Aircraft extends Flyable{
     protected Aircraft(long id, String name, Coordinates coordinates) {
         this.id = id;
         this.name = name;
-        this.coordinates = coordinates;
+        // if (coordinates == void)
+            // throw new Exception ("ffk it");
+        // System.out.println("Coordinates of aircraft " + coordinates);
+        this.coordinates = coordinates.sanitize();
     }
 
     public String getName(){
@@ -36,7 +39,6 @@ public abstract class Aircraft extends Flyable{
     }
 
     public void updateConditions(){
-        System.out.println("A helicopter is updating its conditions");
         WeatherTower twr = (WeatherTower) this.tower;
         String weather = twr.getWeather(this.coordinates);
         String message = "";
@@ -45,22 +47,22 @@ public abstract class Aircraft extends Flyable{
 
         switch (weather) {
             case WeatherProvider.SUN:
-                System.out.println("SUNNY conditions");
+                // System.out.println("SUNNY conditions");
                 deltaCoordinates = this.getTypeData().sun_delta;
                 message = this.getTypeData().sun_message;
                 break;
             case WeatherProvider.FOG:
-                System.out.println("FOGGY conditions");
+                // System.out.println("FOGGY conditions");
                 deltaCoordinates = this.getTypeData().fog_delta;
                 message = this.getTypeData().fog_message;
                 break;
             case WeatherProvider.RAIN:
-                System.out.println("RAINNY conditions");
+                // System.out.println("RAINNY conditions");
                 deltaCoordinates = this.getTypeData().rain_delta;
                 message = this.getTypeData().rain_message;
                 break;
             case WeatherProvider.SNOW:
-                System.out.println("SNOWY conditions");
+                // System.out.println("SNOWY conditions");
                 deltaCoordinates = this.getTypeData().snow_delta;
                 message = this.getTypeData().snow_message;
                 break;

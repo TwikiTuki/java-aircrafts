@@ -44,13 +44,14 @@ public class Coordinates {
     }
 
 
-    public void sanitize() {
+    public Coordinates sanitize() {
         this.latitude = Math.max(MIN_LATITUDE, this.latitude);
         // this.latitude = Math.min(MAX_LATITUDE, this.latitude);
         this.longitude = Math.max(MIN_LONGITUDE, this.longitude);
         // this.longitude = Math.min(MAX_LONGITUDE, this.longitude);
         this.height = Math.max(MIN_HEIGHT, this.height);
         this.height = Math.min(MAX_HEIGHT, this.height);
+        return this;
     }
 
 
@@ -63,15 +64,15 @@ public class Coordinates {
     }
 
     static boolean checkLongitude(int val) {
-        return val > MIN_LONGITUDE;
+        return val >= MIN_LONGITUDE;
     }
 
     static boolean checkLatitude(int val) {
-        return val > MIN_LATITUDE;
+        return val >= MIN_LATITUDE;
     }
 
     static boolean checkHeight(int val) {
-        return val >= MIN_HEIGHT && val <= MAX_HEIGHT;
+        return val >= MIN_HEIGHT ;//&& val <= MAX_HEIGHT; in the example text there is a height over 100 so i guess it is ok to get a height over 100;
     }
 
 }

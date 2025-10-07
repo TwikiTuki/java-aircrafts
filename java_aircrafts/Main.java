@@ -12,10 +12,9 @@ public class Main {
     public static void main(String[] args) throws Exception{
         if (args.length != 1)
             throw new Exception("Invalid number of arguments");
-        System.out.println("The config file is: " + args[0]);
+        System.out.println("Parsed data " + args[0] + ": ");
         ParsedData data = new ParsedData(args[0]);
         data.print();
-        System.out.println("Parsed data: " + args[0]);
         Simulator simulator = new Simulator();
         simulator.run(data);
         System.out.println("THE END");

@@ -16,7 +16,6 @@ public class Helicopter extends Aircraft {
 
     public Helicopter(long id, String name, Coordinates coordinates) {
         super(id, name, coordinates);
-        System.out.println("IS TOWER NULL IN CHILD " + this.tower == null);
         this.typeData = AircraftData.HELICOPTER;
     }
 
