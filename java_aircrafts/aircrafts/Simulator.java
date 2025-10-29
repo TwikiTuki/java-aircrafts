@@ -25,6 +25,7 @@ public class Simulator {
         System.out.println("Starting simulation");
         for (int i = 0; i < simulationData.iterations; i++) {
             tower.changeWeather();
+            System.out.println("============================================================");
         }
     }
     public void testRun() throws InvalidAircraftType {
