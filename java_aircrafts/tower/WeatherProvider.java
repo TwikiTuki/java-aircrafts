@@ -33,7 +33,7 @@ public class WeatherProvider {
         this.rand.setSeed(coordinates.getLongitude() * coordinates.getLatitude() * coordinates.getHeight() * salt);
         int randNum = this.rand.nextInt(10);
         randNum = randNum < 4 ? randNum : 3; 
-        randNum = 3;
+        // randNum = 3;
         return weather[randNum];
     }
 

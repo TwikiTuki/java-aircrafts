@@ -69,8 +69,9 @@ public abstract class Aircraft extends Flyable{
         }
         newCoordinates = this.coordinates.sum(deltaCoordinates);
         newCoordinates.sanitize();
-        System.out.print(String.format("%s: %s (%s)->(%s).                    \t", this.toString(), message, this.coordinates.toShortString(), newCoordinates.toShortString()));
-        System.out.println(String.format("   %s -- %s", this.coordinates.toString(), newCoordinates.toString()));
+        System.out.print(String.format("%s: %s (%s)->(%s)", this.toString(), message, this.coordinates.toShortString(), newCoordinates.toShortString()));
+        // System.out.print(String.format("                            \t  %s -- %s", this.coordinates.toString(), newCoordinates.toString()));
+        System.out.println();
         this.coordinates = newCoordinates;
         if (this.getCoordinates().getHeight() == 0)
             this.tower.unregister(this);
