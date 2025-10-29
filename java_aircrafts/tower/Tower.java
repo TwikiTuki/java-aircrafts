@@ -14,7 +14,8 @@ public class Tower {
 
     public void register(Flyable flyable) {
         System.out.println(String.format("%s: %s %s", this.TOWER_SAYS, flyable.toString(), this.REGISTERED));
-        this.observers.add(flyable);
+        // this.observers.add(flyable);
+        this.observers.add(0, flyable);;
     } 
 
     public void unregister(Flyable flyable) {
